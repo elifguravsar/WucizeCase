@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AnaSayfaLayout.cshtml";
+}
+
+<section class="boxes">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-6 mb-4">
+                    <div class="card">
+                        <a href="~/Category/CategoryDetails/@item.CategoryID">
+                            <img class="card-img-top" src="~/CategoryPictures/@item.CategoryPicture" alt="Card image cap">
+                            <div class="card-body d-flex align-items-center">
+                                <h5 class="card-title">@item.CategoryName</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
